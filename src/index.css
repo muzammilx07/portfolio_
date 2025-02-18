@@ -1,3 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 🌐 Global Scrollbar Customization */
+@layer utilities {
+  /* ✅ Light Mode Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+    background-color: theme("colors.lightBg"); /* Light background */
+  }
+
+  /* ✅ Dark Mode Scrollbar */
+  .dark ::-webkit-scrollbar {
+    background-color: theme("colors.darkBg");
+  }
+
+  /* ✅ Light Mode Scrollbar Thumb */
+  ::-webkit-scrollbar-thumb {
+    background-color: theme("colors.textMutedLight"); /* Light gray thumb */
+    border-radius: 6px;
+    border: 2px solid theme("colors.lightBg"); /* Matches background */
+  }
+
+  /* ✅ Dark Mode Scrollbar Thumb */
+  .dark ::-webkit-scrollbar-thumb {
+    background-color: theme("colors.textMutedDark"); /* Darker thumb */
+    border: 2px solid theme("colors.darkBg"); /* Matches dark background */
+  }
+
+  /* ✅ Hover Effects */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: theme("colors.hoverLight");
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background-color: theme("colors.hoverDark");
+  }
+
+  /* ✅ Overlay (Light/Dark) */
+  .overlay {
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: all;
+  }
+
+  .dark .overlay {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
