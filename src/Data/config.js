@@ -7,6 +7,7 @@ import {
   SiExpress,
   SiShadcnui,
 } from "react-icons/si";
+import {  Github, Linkedin, Phone, Mail, FileText } from "lucide-react";
 import { TbBrandThreejs } from "react-icons/tb";
 
 import { FaReact } from "react-icons/fa";
@@ -29,14 +30,34 @@ export const heroData = {
   name: "Muzammil Shareef",
   title: "Full Stack Developer & Computer Science Engineer Student",
   location: "Telangana, India",
-  contacts: {
-    github: "https://github.com/muzammilx07",
-    linkedin: "https://www.linkedin.com/in/muzammil633/",
-    phone: "https://wa.me/919030929925",
-    email: "mailto:muzammilxshareef@gmail.com",
-    resume:
-      "https://docs.google.com/document/d/1APMAMLtOIx5Wiiu8SKwB52Q51-cNe_PBkIEbNd8V0Jk/edit?usp=drive_link",
-  },
+  contacts: [
+    {
+      name: "GitHub",
+      icon: Github,
+      link: "https://github.com/muzammilx07",
+    },
+    {
+      name: "LinkedIn",
+      icon: Linkedin,
+      link: "https://www.linkedin.com/in/muzammil633/",
+    },
+    {
+      name: "WhatsApp",
+      icon: Phone,
+      link: "https://wa.me/919030929925",
+    },
+    {
+      name: "Email",
+      icon: Mail,
+      link: "mailto:muzammilxshareef@gmail.com",
+    },
+    {
+      name: "Resume",
+      icon: FileText,
+      link: "https://docs.google.com/document/d/1APMAMLtOIx5Wiiu8SKwB52Q51-cNe_PBkIEbNd8V0Jk/edit?usp=drive_link",
+    },
+  ]
+ 
 };
 
 

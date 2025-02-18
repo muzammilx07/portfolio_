@@ -1,24 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, {  useContext } from "react";
 import { Sun, Moon } from "lucide-react";
 import { motion } from "framer-motion";
 import { navbarData } from "../Data/config";
+import { ThemeContext } from "../lib/ThemeContext";
 
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("theme") === "dark";
-  });
-
-  // Apply theme on toggle
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [darkMode]);
-
+ const { darkMode, setDarkMode } = useContext(ThemeContext);
+ 
   return (
     <div className="border border-borderLight dark:border-borderDark bg-lightBg dark:bg-darkBg text-textLight dark:text-textDark px-6 py-2 flex justify-between items-center w-full rounded-lg ">
       {/* Left Section: Logo & Menu */}

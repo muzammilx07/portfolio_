@@ -1,22 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext} from "react";
 import { Sun, Moon, Info } from "lucide-react";
 import { motion } from "framer-motion";
+import { ThemeContext } from "../lib/ThemeContext";
 
 const Footer = () => {
-  const [darkMode, setDarkMode] = useState(() => {
-      return localStorage.getItem("theme") === "dark";
-    });
+  const { darkMode, setDarkMode } = useContext(ThemeContext);
   
-    // Apply theme on toggle
-    useEffect(() => {
-      if (darkMode) {
-        document.documentElement.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-        localStorage.setItem("theme", "light");
-      }
-    }, [darkMode]);
 
   return (
     <div className="bg-lightBg dark:bg-darkBg text-textLight dark:text-textDark px-4 py-4 flex flex-col w-full max-w-full rounded-lg gap-2 overflow-hidden border-t border-borderLight dark:border-borderDark">

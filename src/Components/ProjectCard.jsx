@@ -18,7 +18,7 @@ const ProjectCard = ({ project }) => {
           {project.year}
         </span>
       </div>
-      <div className="flex-row flex ">
+      <div className="flex flex-col sm:flex-row">
         {/* Body Section - Left Section with Description and Buttons */}
         <div className="flex-1 flex flex-col gap-4 px-6">
           {/* Technologies */}
@@ -58,7 +58,7 @@ const ProjectCard = ({ project }) => {
               <HoverButton
                 text="Live"
                 icon={ExternalLink}
-                className="px-4 py-2 bg-iconBgLight dark:bg-iconBgDark text-textLight dark:text-textDark rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark "
+                className="px-4 py-2 bg-iconBgLight dark:bg-darkBg text-textLight dark:text-textDark rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark "
               />
             </a>
           </div>
@@ -68,13 +68,10 @@ const ProjectCard = ({ project }) => {
         <motion.div
           whileHover={{ rotate: -4, scale: 1.05 }}
           transition={{ duration: 0.3 }}
-          className="relative w-56 h-32 md:w-60 md:h-36 overflow-hidden"
+          className="relative lg:w-56 sm:w-72 h-32 md:w-60 md:h-36 overflow-hidden m-2 sm:m-0"
         >
           {/* Apply static x position to hide part of the image */}
-          <div
-            className="absolute right-0 top-0 w-full h-full bg-cover bg-center rounded-lg"
-            style={{ transform: "translateX(10px)" }}
-          >
+          <div className="absolute right-0 top-0 w-full h-full bg-cover bg-center rounded-lg lg:translate-x-[10px]">
             <img
               src={project.image}
               alt={project.name}

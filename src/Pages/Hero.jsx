@@ -1,7 +1,8 @@
 import React from "react";
-import { MapPin, Github, Linkedin, Phone, Mail, FileText } from "lucide-react";
+import { MapPin, Mail } from "lucide-react";
 import { heroData } from "../Data/config";
 import HoverButton from "../Components/HoverButton";
+import Tooltip from '../Components/Tooltip'
 
 const Hero = () => {
   return (
@@ -46,31 +47,21 @@ const Hero = () => {
       </div>
 
       {/* Social Icons */}
-      <div className="flex gap-3 mt-2 text-textMutedLight dark:text-textMutedDark">
-        {Object.entries(heroData.contacts).map(([key, link]) => {
-          const IconComponent =
-            key === "github"
-              ? Github
-              : key === "linkedin"
-              ? Linkedin
-              : key === "phone"
-              ? Phone
-              : key === "email"
-              ? Mail
-              : FileText;
-
-          return (
-            <a
-              key={key}
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-lg bg-iconBgLight dark:bg-iconBgDark hover:bg-hoverLight dark:hover:bg-hoverDark "
-            >
-              <IconComponent size={22} />
-            </a>
-          );
-        })}
+      <div className="flex gap-3 mt-2  text-textMutedLight dark:text-textMutedDark ">
+        {heroData.contacts.map((contact, index) => (
+          <a
+            key={index}
+            href={contact.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 flex justify-center items-center rounded-lg relative bg-iconBgLight dark:bg-iconBgDark hover:bg-hoverLight dark:hover:bg-hoverDark "
+          >
+            {" "}
+            <Tooltip message={contact.name}>
+              <contact.icon size={22} />
+            </Tooltip>
+          </a>
+        ))}
       </div>
     </div>
   );
