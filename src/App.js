@@ -6,6 +6,7 @@ import Footer from "./Pages/Footer";
 import Hero from "./Pages/Hero";
 import Project from "./Pages/Project";
 import TechCard from "./Pages/TechCard";
+import JetBrainsMono from "./Assests/webfonts/JetBrainsMono-Light.woff2";
 
 function App() {
   return (
@@ -24,3 +25,12 @@ function App() {
 }
 
 export default App;
+
+
+
+
+const fontFace = new FontFace("JetBrainsMono", `url(${JetBrainsMono})`);
+fontFace.load().then((loadedFont) => {
+  document.fonts.add(loadedFont);
+  document.body.style.fontFamily = '"JetBrainsMono", sans-serif';
+});

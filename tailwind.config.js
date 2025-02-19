@@ -4,6 +4,7 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      jetbrains: ["MyCustomFont", "sans-serif"],
       colors: {
         lightBg: "#ffffff", // bg-white
         darkBg: "#000000", // dark:bg-[#09090B]
