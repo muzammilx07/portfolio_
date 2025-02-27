@@ -106,7 +106,7 @@ export const projects = [
     ],
     description:
       "A productivity app to track and manage daily tasks efficiently.",
-    live: "https://p1-blush.vercel.app/",
+    live: "https://p1-demo.vercel.app/",
     image: p2img,
   },
 ];
